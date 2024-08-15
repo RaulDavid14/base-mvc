@@ -5,11 +5,11 @@ require_once $ruta."/config/config.php";
 
 class Controller {
     public function view($view, $data = []) {
-        require_once PATH.'/app/views/' . $view . '.php';
+        require_once TWO_LEVELS.'/app/views/' . $view . '.php';
     }
 
     public function model($model) {
-        require_once PATH.'/app/models/' . $model . '.php';
+        require_once TWO_LEVELS.'/app/models/' . $model . '.php';
         return new $model();
     }
 }
