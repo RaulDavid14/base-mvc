@@ -1,4 +1,6 @@
-RewriteEngine On
+RewriteEngine On #Permitir la escritura de la url
+
+# Redirigir todas las solicitudes a index.php
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ public/index.php?url=$1 [QSA,L]
+RewriteRule ^ index.php [QSA,L]
