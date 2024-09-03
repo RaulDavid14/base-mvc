@@ -3,16 +3,13 @@ require_once 'config/config.php';
 
 $root = $_SERVER['SERVER_ADDR'] == '127.0.0.1' ? '/base-mvc' : '';
 
-// Obtener la URL solicitada
 $request = $_SERVER['REQUEST_URI'];
-// Remover la query string de la URL
 $request = strtok($request, '?');
 
 $routes = [
     $root.'/' => 'homeController@index',
 ];
 
-// Comprobar si la ruta existe en el listado
 if (array_key_exists($request, $routes)) {
     $controllerAction = explode('@', $routes[$request]);
     $controllerName = $controllerAction[0];
