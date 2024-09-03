@@ -1,12 +1,14 @@
 <?php
 
-class HomeController
+require_once ROOT_PATH.'/includes/controller.php';
+
+class HomeController extends Controller
 {
 
-    public function load_view()
+    public function index()
     {
-        $titulo = 'Biendenidos';
-        require_once './views/home/index.php';
+        $titulo = 'Bienvenidos';
+        $this->load_view('/home');
     }
 
 }
